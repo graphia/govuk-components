@@ -1,0 +1,7 @@
+<%= tag.table(id: id, class: classes, **html_attributes) do %>
+  <%= caption %>
+  <%= head %>
+  <% bodies.each do |body| %>
+    <%= body %>
+  <% end %>
+<% end %>

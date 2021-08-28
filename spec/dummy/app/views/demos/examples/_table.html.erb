@@ -1,0 +1,32 @@
+<%= example_heading('Table') %>
+
+<%= render "shared/example",
+  title: 'Table with slots',
+  example: <<~SUMMARY_LIST
+    render GovukComponent::TableComponent.new do |table|
+      table.head do |head|
+        head.row do |row|
+          row.cell(header: true, text: 'a')
+          row.cell(header: true, text: 'b')
+        end
+      end
+
+      table.body do |body|
+        body.row do |row|
+          row.cell(text: 'c')
+          row.cell(text: 'd')
+        end
+      end
+    end
+  SUMMARY_LIST
+%>
+
+<%= render "shared/example",
+  title: 'Table from array',
+  example: <<~SUMMARY_LIST
+    render GovukComponent::TableComponent.new(
+      head: %w(a b c),
+      rows: [%w(d e f), %w(g h i)],
+    )
+  SUMMARY_LIST
+%>
